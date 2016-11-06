@@ -1,0 +1,15 @@
+package com.springapp.mvc.document.enums;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: esalamanca
+ * Date: 16-01-15
+ * Time: 04:34 PM
+ * Tipos de formularios.
+ */
+public enum FormularioTipo {
+
+    NORMAL, SIMPLIFICADA, SIMPLIFICADA_INTERNO, SIMPLIFICADA_EXTERNO, MIC, FLU, CPIC, CRT, MCI, GUIA_AEREA, MAC, MEC, MP, MC, BT, GUIA_COURIER,
+    GUIA_POSTAL, GUIA_CONSOLIDACION, TIF, RBL, SOLICITUD_CORRECCION, SOLICITUD_ANULACION, CONTINGENCIA, OPERACION_MANUAL, MIF, AFORO_PLANTA,HAB
+
+}

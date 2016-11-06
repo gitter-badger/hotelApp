@@ -1,0 +1,49 @@
+//insercion
+
+{
+	"id":null,
+	"nombre":"hab-3",
+	"precioReferencial":"500",
+	"size":"50",
+	"ubicacion":"1",
+	"maximoPersonas":"2",
+	"tipo":"normal",
+	"descripcion":"normalito",
+	"observacion":"sin observaciones",
+	"caracteristicas":[{          
+          "id": "1212",
+          "nombre": "11212555",
+		  "observacion": "11212555"
+	},{          
+          "id": "1212",
+          "nombre": "11212",
+		  "observacion": "11212"
+	}],
+	"usuarioCreacion":"vsantos",
+	"usuarioModificacion":"vsantos"
+}
+
+
+//modificacion
+{
+	"id":"f952d50c-7c18-4e06-a691-38c19b1ece7d",
+	"nombre":"hab-suite",
+	"precioReferencial":"500",
+	"size":"50",
+	"ubicacion":"1",
+	"maximoPersonas":"15",
+	"tipo":"normal",
+	"descripcion":"normalito",
+	"observacion":"sin observaciones",
+	"caracteristicas":[{          
+          "id": "3",
+          "nombre": "catre",
+		  "observacion": "11212555"
+	},{          
+          "id": "4",
+          "nombre": "sillon",
+		  "observacion": "11212"
+	}],
+	"usuarioCreacion":"vsantos",
+	"usuarioModificacion":"vsantos"
+}
