@@ -15,8 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by vsantos on 03/11/2016.
@@ -89,5 +88,45 @@ public class HabitacionServiceImpl implements HabitacionService {
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
+    }
+
+    @Override
+    public boolean delete(Habitacion habitacion) throws Exception {
+        try {
+            Habitacion habitacion1 = new Habitacion();
+            Documento modelRespuesta = new Documento();
+            //Recuperar el archivo por el id
+            Documento model = persistenceTemplate.findById(habitacion.getId(), "habitacion");
+            if (model != null) {
+                model.setData(habitacion);
+            }else{
+                throw new Exception("No se encontro el documento a eliminarse: " + habitacion.getId());
+            }
+            persistenceTemplate.remove(model, "habitacion");
+            JsonResult jsonResult = new JsonResult(true, model);
+            if (jsonResult.getSuccess()) {
+                return true;
+            } else {
+                throw new Exception(jsonResult.getResult().toString());
+            }
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public List<Habitacion> findAll(Map<String, Object> map) throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Habitacion> habitacionList = new ArrayList<Habitacion>();
+        //Formamos el string con los campos y valores para la consulta
+        Map<String, String> allRequestParams = new HashMap<String, String>();
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            allRequestParams.put(entry.getKey(), entry.getValue().toString());
+        }
+        List<Documento> documentos = persistenceTemplate.findQuery("habitacion", allRequestParams);
+        for (Documento doc : documentos) {
+            habitacionList.add(objectMapper.convertValue(doc.getData(), Habitacion.class));
+        }
+        return habitacionList;
     }
 }
