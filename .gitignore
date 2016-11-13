@@ -1,0 +1,14 @@
+# Environment specific config files #
+#####################################
+.DS_Store
+.DS_Store?
+.idea
+.gradle
+build
+
+*/target/*
+
+.classpath
+.project
+.settings
+
